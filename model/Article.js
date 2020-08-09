@@ -5,13 +5,25 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
-    title:{
+    headline: {
         type: String,
-        required:true
+        required: true
+    },
+    summaryOne: {
+        type: String,
+        required: true
+    },
+    summaryTwo: {
+        type: String,
+        required: false
     },
     link: {
         type: String,
         required: true
+    },
+    saved: {
+        type: Boolean,
+        default: false
     },
     //note object stores Note id
     //ref links the ObjectId to the Note Model
