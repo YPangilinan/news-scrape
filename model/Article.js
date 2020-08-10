@@ -21,9 +21,6 @@ var ArticleSchema = new Schema({
         type: Boolean,
         default: false
     },
-    //note object stores Note id
-    //ref links the ObjectId to the Note Model
-    //will let us use the populate method for the Article and the associated Note
     note: []
 });
 
