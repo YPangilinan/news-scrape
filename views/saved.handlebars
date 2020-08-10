@@ -63,12 +63,14 @@
             var id = $(this).children().val();
             var newNote = $(this).children("#message").val();
             console.log(newNote);
-            var data = {
+              var data = {
+                _id: id,
                 note: newNote
             }
-            $.ajax({
+              $.ajax({
                 type: "POST",
-                url: "/newnote/" + id
+                url: "/newnote/" + id,
+                data: data
             })
             location.reload();
             $("#message").val("");
