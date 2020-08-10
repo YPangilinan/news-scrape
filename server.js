@@ -28,9 +28,10 @@ var results = [];
 //api routes
 
 app.get("/", function(req,res){
-    db.Article.find({saved : false}, function(err, result){
-        if (err) throw err;
-        res.render("index", {result})
+    db.Article.find({saved : false}).then(result => {
+        res.render('index', {
+            result: result.map(result => result.toJSON())
+        })
     })
 });
 
@@ -85,26 +86,51 @@ app.put("/unsave/:id", function(req, res) {
         }
     })
 })
-app.put("/newnote/:id", function(req, res) {
+// Route for grabbing a specific Article by id, populate it with it's note
+app.get("/newnote/:id", function(req, res) {
+    // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
+    db.Article.findOne({ _id: req.params.id })
+      // ..and populate all of the notes associated with it
+      .populate("note")
+      .then(function(dbArticle) {
+        // If we were able to successfully find an Article with the given id, send it back to the client
+        res.json(dbArticle);
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+  });
+
+app.post("/newnote/:id", function(req, res) {
     console.log(req.body)
     console.log(req.body._id);
     console.log(req.body.note);
-    db.Article.updateOne({ _id: req.body._id }, { $push: { note: req.body.note }}, function(err, result) {
-        console.log(result)
-        if (result.changedRows == 0) {
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        } 
+    db.Note.create(req.body)
+    .then(function(dbNote) {
+      // If a Note was created successfully, find one Article with an `_id` equal to `req.params.id`. Update the Article to be associated with the new Note
+      // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
+      // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+      console.log(dbNote.note);
+      return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true });
     })
+    .then(function(dbArticle) {
+      // If we were able to successfully update an Article, send it back to the client
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
 })
 
 app.get("/saved", function (req, res) {
     var savedArticles = [];
-    db.Article.find({ saved: true }, function (err, saved) {
-        if (err) throw err;
-        savedArticles.push(saved)
-        res.render("saved", { saved })
+    db.Article.find({saved : true}).then(saved => {
+        savedArticles.push(saved);
+        res.render('saved', {
+            saved: saved.map(saved => saved.toJSON())
+        })
     })
 })
 

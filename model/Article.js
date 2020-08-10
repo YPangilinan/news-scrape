@@ -24,13 +24,16 @@ var ArticleSchema = new Schema({
     //note object stores Note id
     //ref links the ObjectId to the Note Model
     //will let us use the populate method for the Article and the associated Note
-    note: [{
-        type: Schema.Types.ObjectId,
-        ref: "Note"
-    }]
+    note: []
 });
 
 //creates the model
 var Article = mongoose.model("Article", ArticleSchema);
 
 module.exports = Article;
+
+
+// {
+//     type: Schema.Types.ObjectId,
+//     ref: "Note"
+// }
