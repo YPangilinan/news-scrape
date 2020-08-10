@@ -76,6 +76,21 @@ app.put("/update/:id", function (req, res) {
     });
 });
 
+app.put("/newnote/:id", function(req, res) {
+    console.log(req.body)
+    console.log(req.body._id);
+    console.log(req.body.note);
+    db.Article.updateOne({ _id: req.body._id }, { $push: { note: req.body.note }}, function(err, result) {
+        console.log(result)
+        if (result.changedRows == 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        } 
+    })
+})
+
+
 app.put("/unsave/:id", function(req, res) {
     console.log(req.body)
     db.Article.updateOne({ _id: req.params.id }, { $set: { saved: false }}, function(err, result) {
