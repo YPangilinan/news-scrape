@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="col-md-6" id= "newNoteDiv">
-            <form action = "/newnote" method = "PUT" id = "new-note">
+            <form action = "/newnote" method = "POST" id = "new-note">
             <input type = "hidden" name = "id" value = {{_id}}>
             <input type = "name" class = "form-control" id = "message" placeholder = "Make a Note..">
             <button class = "btn btn-lg" id = "noteBtn" type = "submit">SUBMIT</button>
@@ -60,18 +60,15 @@
     $(document).ready(function(){
         $("#new-note").on("submit", function(event){
             event.preventDefault();
-            console.log("new note");
             var id = $(this).children().val();
             var newNote = $(this).children("#message").val();
             console.log(newNote);
             var data = {
-                _id: id,
                 note: newNote
             }
             $.ajax({
                 type: "POST",
-                url: "/newnote/" + id,
-                data: data
+                url: "/newnote/" + id
             })
             location.reload();
             $("#message").val("");

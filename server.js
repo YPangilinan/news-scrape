@@ -103,9 +103,9 @@ app.get("/newnote/:id", function(req, res) {
   });
 
 app.post("/newnote/:id", function(req, res) {
-    console.log(req.body)
-    console.log(req.body._id);
-    console.log(req.body.note);
+    // console.log(req.body)
+    // console.log(req.body._id);
+    // console.log(req.body.note);
     db.Note.create(req.body)
     .then(function(dbNote) {
       // If a Note was created successfully, find one Article with an `_id` equal to `req.params.id`. Update the Article to be associated with the new Note
