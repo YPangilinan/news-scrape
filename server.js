@@ -20,7 +20,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.set('index', __dirname + '/views');
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper2";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 var results = [];
@@ -35,20 +35,17 @@ app.get("/", function(req,res){
 });
 
 app.get("/scrape", function(req,res){
-    axios.get("https://www.nytimes.com/").then(function (response) {
+    axios.get("https://www.npr.org/").then(function (response) {
         var $ = cheerio.load(response.data)
-        $("h2 span").each(function (i, element) {
-            var headline = $(element).text();
-            var link = "https://www.nytimes.com";
-            link = link + $(element).parents("a").attr("href");
-            var summaryOne = $(element).parent().parent().siblings().children("li:first-child").text();
-            var summaryTwo = $(element).parent().parent().siblings().children("li:last-child").text();
+        $(".story-text").each(function (i, element) {
+            var headline = $(this).find(".title").text();
+            var link = $(this).find(".title").parent().attr("href");
+            var summary = $(this).find(".teaser").text();
 
-            if (headline && summaryOne && link) {
+            if (headline && summary && link) {
                 results.push({
                     headline: headline,
-                    summaryOne: summaryOne,
-                    summaryTwo: summaryTwo,
+                    summaryOne: summary,
                     link: link
                 })
             }
@@ -114,4 +111,4 @@ app.get("/saved", function (req, res) {
 
 app.listen(PORT, function () {
     console.log("Server listening on: http://localhost:" + PORT);
-})
+});
