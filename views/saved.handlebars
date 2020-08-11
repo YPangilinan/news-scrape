@@ -1,49 +1,82 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12" id="titleDiv">
-            <h1 id="title">NPR SCRAPER</h1>
-        </div>
+  <nav class = "nav-extended">
+    <div class="nav-wrapper">
+      <img src = "https://media.npr.org/chrome_svg/npr-logo.svg" style = "height: 60px; margin-left: 10px; padding: 5px;";>
+      <a href = "/" class = "news-scraper">SCRAPER</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> <a href="/saved" class="upper-link">SAVED ARTICLES</a></li>
+        <li><a href="https://www.npr.org/" class="upper-link">NPR.ORG</a></li>
+      </ul>
     </div>
-    <div class="row" class="linkRow">
-        <div class="col-md-4">
-            <a href="/" class="upper-link">HOME PAGE</a>
-        </div>
-        <div class="col-md-4">
-            <h1 class = "text-white">S A V E D</h1>
-        </div>
-        <div class="col-md-4">
-            <a href="https://www.npr.org/" class="upper-link">NPR.ORG</a>
-        </div>
-    </div>
-    <hr class="white-underline">
+  </nav>
+   <ul class="sidenav" id="mobile-demo">
+      <li><a class="waves-effect waves-light btn" id = "scrapeBtn">SCRAPE</a></li>
+        <li> <a href="/saved" class="upper-link">SAVED ARTICLES</a></li>
+        <li><a href="https://www.npr.org/" class="upper-link">NPR.ORG</a></li>
+  </ul>
+  <nav class="navbar navbar-expand-lg text-light">
+      <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler btn-light" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+         <li class="nav-item">
+        <a class="nav-link text-light" href="/"><i class="fa fa-home" aria-hidden="true"></i> HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="https://www.npr.org/sections/news/" target = "_blank"><i class="fa fa-file-text-o" aria-hidden="true"></i> NEWS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="https://www.npr.org/sections/arts/" target = "_blank"><i class="fa fa-child" aria-hidden="true"></i> ARTS &amp; LIFE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="https://www.npr.org/music/" target = "_blank"><i class="fa fa-music" aria-hidden="true"></i> MUSIC</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link text-light" href="https://www.npr.org/programs/" target = "_blank"><i class="fa fa-headphones" aria-hidden="true"></i> NEWS &amp; PODCASTS</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container mt-4">
+<span class = "scraped">SAVED ARTICLES</span>
     {{#each saved}}
-    <div class = "row article">
-        <div class="col-md-6" id = "saved">
-            <h2 class = "headline">{{headline}}</h2>
-            <ul>
-                <li class = "summary">{{summaryOne}}</li>
-            </ul>
-            <hr>
-            <div class="row" id = "bottom-row">
-                <div class="col-md-6">
-                    <a href = {{link}} class = "link">FULL STORY</a>
-                </div>
-                <div class="col-md-6">
-                    <form action = "/unsave" method = "PUT" id = "delete-article">
+       <div class="row">
+                     <div class="card w-100">
+                        <div class="card-body">
+                            <p class = "npr">NEW ON NPR</p>
+                            <span class="headline">{{headline}}</span>
+                            <p class = "summary mt-2">{{summaryOne}}</p>
+                            <hr>
+                            <a href = {{link}} class="waves-effect waves-light btn-small" id = "linkbtn"><i class="material-icons left">assignment</i>Link to Full Story</a>
+                            <button type="button" class="waves-effect waves-light btn-small" data-toggle="modal" data-target="#exampleModalLong" id = "saveBtn"><i class="material-icons left">note_add</i>Make A Note</button>
+                           <form action = "/unsave" method = "PUT" id = "delete-article">
                     <input type = "hidden" name = "id" value = {{_id}}>
-                    <button class = "btn btn-lg" id = "deleteBtn" type = "submit">DELETE</button>
+                    <button class="waves-effect waves-light btn-small" id = "deleteBtn" type = "submit">DELETE</button>
                     </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6" id= "newNoteDiv">
+        <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="npr" id="exampleModalLongTitle">Add a Note</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class="col-lg-12" id= "newNoteDiv">
             <form action="/newnote" method="PUT" id = "new-note">
             <input type = "hidden" name = "id" value = {{_id}}>
             <input type = "name" class = "form-control" id = "message" placeholder = "Make a Note..">
-            <button class = "btn btn-lg" id = "noteBtn" type = "submit">SUBMIT</button>
+            <button class = "btn btn-md" id = "noteBtn" type = "submit">SUBMIT</button>
              </form>
              <div id = "noteDiv">
-                 <h2 class = "savedHeader">Saved Notes</h2>
+                 <h5 class = "npr">Past Notes</h5>
                  <hr>
                  <ul>
                      {{#each note}}
@@ -52,9 +85,13 @@
                  </ul>
              </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
     {{/each}}
-</div>   
+</div> 
+</div>  
 
 <script>
     $(document).ready(function(){
@@ -73,7 +110,6 @@
                 url: "/newnote/" + id,
                 data: data
             })
-            location.reload();
             $("#message").val("");
         });
 
@@ -89,5 +125,9 @@
             })
             location.reload();
         });
+
+         $(document).ready(function(){
+            $('.sidenav').sidenav();
+             });
     });
 </script>
