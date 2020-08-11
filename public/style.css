@@ -217,14 +217,15 @@ p{
 }
 
 .news-scraper{
-    color:#696E6D;
+    color:black;
     font-family: 'Work Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    letter-spacing: 1.08px;
 }
 
 .news-scraper:hover{
-    text-decoration: none;    
-    color: rgb(184, 234, 250);
+    text-decoration: none;
+    color: black;
 }
 
 .scraped{
