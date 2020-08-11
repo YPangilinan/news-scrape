@@ -45,16 +45,23 @@
        <div class="row">
                      <div class="card w-100">
                         <div class="card-body">
-                            <p class = "npr">NEW ON NPR</p>
+                         <div class="row">
+                             <div class="col-lg-7">
+                                    <p class = "npr">NEW ON NPR</p>
                             <span class="headline">{{headline}}</span>
                             <p class = "summary mt-2">{{summaryOne}}</p>
                             <hr>
-                            <a href = {{link}} class="waves-effect waves-light btn-small" id = "linkbtn"><i class="material-icons left">assignment</i>Link to Full Story</a>
+                            <a href = {{link}} class="waves-effect waves-light btn-small" id = "linkbtn" target = "_blank"><i class="material-icons left">assignment</i>Link to Full Story</a>
                             <button type="button" class="waves-effect waves-light btn-small" data-toggle="modal" data-target="#preview-modal" id = "saveBtn"><i class="material-icons left">note_add</i>Make A Note</button>
                            <form action = "/unsave" method = "PUT" id = "delete-article">
-                    <input type = "hidden" name = "id" value = {{_id}}>
-                    <button class="waves-effect waves-light btn-small" id = "deleteBtn" type = "submit"><i class="material-icons left">delete_sweep</i>DELETE</button>
-                    </form>
+                            <input type = "hidden" name = "id" value = {{_id}}>
+                            <button class="waves-effect waves-light btn-small" id = "deleteBtn" type = "submit"><i class="material-icons left">delete_sweep</i>DELETE</button>
+                            </form>
+                             </div>
+                             <div class="col-lg-5">
+                              <img src = {{image}} style = "width: 450px; padding: 15px;">
+                            </div>
+                         </div>
                         </div>
                     </div>
                 </div>
