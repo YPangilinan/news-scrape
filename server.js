@@ -23,7 +23,6 @@ app.set('index', __dirname + '/views');
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper3";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
-var results = [];
 
 //api routes
 app.get("/", function(req,res){
@@ -37,7 +36,8 @@ app.get("/", function(req,res){
 
 app.get("/scrape", function(req,res){
     axios.get("https://www.npr.org/").then(function (response) {
-        var $ = cheerio.load(response.data)
+        var $ = cheerio.load(response.data);
+        var results = [];
         $(".story-text").each(function (i, element) {
             var headline = $(this).find(".title").text();
             var link = $(this).find(".title").parent().attr("href");

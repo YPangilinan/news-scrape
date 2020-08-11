@@ -1,5 +1,6 @@
 //article model based off Artcile.js from Scraping-with-mongoose activity
 var mongoose = require("mongoose");
+var uniqueValidator = require("mongoose-unique-validator");
 
 //schema constructor to add to mongo DB
 var Schema = mongoose.Schema;
@@ -15,6 +16,7 @@ var ArticleSchema = new Schema({
     },
     link: {
         type: String,
+        unique: true,
         required: true
     },
     saved: {
@@ -23,6 +25,8 @@ var ArticleSchema = new Schema({
     },
     note: []
 });
+
+ArticleSchema.plugin(uniqueValidator);
 
 //creates the model
 var Article = mongoose.model("Article", ArticleSchema);
