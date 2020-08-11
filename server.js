@@ -34,6 +34,7 @@ app.get("/", function(req,res){
     })
 });
 
+
 app.get("/scrape", function(req,res){
     axios.get("https://www.npr.org/").then(function (response) {
         var $ = cheerio.load(response.data)
@@ -41,6 +42,7 @@ app.get("/scrape", function(req,res){
             var headline = $(this).find(".title").text();
             var link = $(this).find(".title").parent().attr("href");
             var summary = $(this).find(".teaser").text();
+            // var image = $(this).parent('.story-wrap').children('.thumb-image').children('.bucketwrap').children('.imagewrap').children('a').children('img').attr('src');
 
             if (headline && summary && link) {
                 results.push({
