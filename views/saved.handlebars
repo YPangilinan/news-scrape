@@ -39,6 +39,7 @@
     </ul>
   </div>
 </nav>
+
 <div class="container mt-4">
 <span class = "scraped">SAVED ARTICLES</span>
     {{#each saved}}
@@ -50,17 +51,17 @@
                             <p class = "summary mt-2">{{summaryOne}}</p>
                             <hr>
                             <a href = {{link}} class="waves-effect waves-light btn-small" id = "linkbtn"><i class="material-icons left">assignment</i>Link to Full Story</a>
-                            <button type="button" class="waves-effect waves-light btn-small" data-toggle="modal" data-target="#exampleModalLong" id = "saveBtn"><i class="material-icons left">note_add</i>Make A Note</button>
+                            <button type="button" class="waves-effect waves-light btn-small" data-toggle="modal" data-target="#preview-modal" id = "saveBtn"><i class="material-icons left">note_add</i>Make A Note</button>
                            <form action = "/unsave" method = "PUT" id = "delete-article">
                     <input type = "hidden" name = "id" value = {{_id}}>
-                    <button class="waves-effect waves-light btn-small" id = "deleteBtn" type = "submit">DELETE</button>
+                    <button class="waves-effect waves-light btn-small" id = "deleteBtn" type = "submit"><i class="material-icons left">delete_sweep</i>DELETE</button>
                     </form>
                         </div>
                     </div>
                 </div>
         <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade preview-modal" data-backdrop="true" id="preview-modal" tabindex="-1" role="dialog" aria-labelledby="preview-modal" aria-hidden = "true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="npr" id="exampleModalLongTitle">Add a Note</h2>
@@ -69,23 +70,19 @@
         </button>
       </div>
       <div class="modal-body">
-       <div class="col-lg-12" id= "newNoteDiv">
             <form action="/newnote" method="PUT" id = "new-note">
             <input type = "hidden" name = "id" value = {{_id}}>
             <input type = "name" class = "form-control" id = "message" placeholder = "Make a Note..">
             <button class = "btn btn-md" id = "noteBtn" type = "submit">SUBMIT</button>
              </form>
-             <div id = "noteDiv">
                  <h5 class = "npr">Past Notes</h5>
                  <hr>
                  <ul>
                      {{#each note}}
-                     <li>{{this}}</li>
+                     <li class = "summary">{{this}}</li>
                      {{/each}}
                  </ul>
-             </div>
-        </div>
-      </div>
+         </div>
     </div>
   </div>
 </div>
@@ -110,6 +107,7 @@
                 url: "/newnote/" + id,
                 data: data
             })
+            location.reload();
             $("#message").val("");
         });
 
