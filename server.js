@@ -20,7 +20,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.set('index', __dirname + '/views');
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper3";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper4";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
@@ -38,17 +38,19 @@ app.get("/scrape", function(req,res){
     axios.get("https://www.npr.org/").then(function (response) {
         var $ = cheerio.load(response.data);
         var results = [];
-        $(".story-text").each(function (i, element) {
+        $(".story-wrap").each(function (i, element) {
             var headline = $(this).find(".title").text();
             var link = $(this).find(".title").parent().attr("href");
             var summary = $(this).find(".teaser").text();
+            var image = $(this).find(".imagewrap").find("a").find("img").attr('src');
             // var image = $(this).parent('.story-wrap').children('.thumb-image').children('.bucketwrap').children('.imagewrap').children('a').children('img').attr('src');
 
             if (headline && summary && link) {
                 results.push({
                     headline: headline,
                     summaryOne: summary,
-                    link: link
+                    link: link,
+                    image: image
                 })
             }
         });

@@ -92,7 +92,9 @@
                 <div class="row">
                      <div class="card w-100">
                         <div class="card-body">
-                            <p class = "npr">NEW ON NPR</p>
+                          <div class="row">
+                            <div class="col-lg-7">
+                              <p class = "npr">NEW ON NPR</p>
                             <span class="headline">{{headline}}</span>
                             <p class = "summary mt-2">{{summaryOne}}</p>
                             <hr>
@@ -101,6 +103,11 @@
                              <input type="hidden" name="id" value={{_id}}>
                             <button class="btn btn-md" id="saveBtn" type="submit"><i class="material-icons left">add</i>SAVE ARTICLE</button>
                             </form>
+                            </div>
+                            <div class="col-lg-5">
+                              <img src = {{image}} style = "width: 450px; padding: 15px;">
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </div>
