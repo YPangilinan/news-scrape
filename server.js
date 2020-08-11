@@ -20,7 +20,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.set('index', __dirname + '/views');
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper2";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper3";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 var results = [];
