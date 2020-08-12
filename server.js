@@ -61,7 +61,7 @@ app.get("/scrape", function(req,res){
                 console.log(err);
             })
         app.get("/", function (req, res) {
-            res.render("index")
+            res.render("index");
         })
     })
 });
