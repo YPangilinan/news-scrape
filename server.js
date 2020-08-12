@@ -43,7 +43,7 @@ app.get("/scrape", function(req,res){
             var summary = $(this).find(".teaser").text();
             var image = $(this).find(".imagewrap").find("a").find("img").attr('src');
 
-            if (headline && summary && link) {
+            if (headline && summary && link && image) {
                 results.push({
                     headline: headline,
                     summaryOne: summary,

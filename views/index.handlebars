@@ -191,11 +191,9 @@
 
 <script>
   $(document).ready(function () {
-
     $(document).ready(function () {
       $('.sidenav').sidenav();
     });
-
     $("#scrapeBtn").on("click", function (event) {
       event.preventDefault();
       $.get("/scrape", function (data) {
@@ -222,7 +220,6 @@
       })
       location.reload();
     });
-
     function clearData() {
       return $.ajax({
         url: "/articles",
