@@ -237,7 +237,13 @@ p{
 
 #preview-modal.modal.fade.preview-modal.show{
     background: transparent !important;
-    height:100% !important;
+    height:100vh !important;
+}
+
+.modal{
+    height: 100vh;
+    max-height: 100% !important;
+
 }
 
 footer{
