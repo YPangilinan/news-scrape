@@ -1,197 +1,233 @@
- <nav class = "nav-extended">
-    <div class="nav-wrapper">
-      <a href = "/" class = "news-scraper"><img src = "https://media.npr.org/chrome_svg/npr-logo.svg" style = "height: 60px; margin-left: 10px; padding: 5px;"> SCRAPER</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" style = "color: black;">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn text-light" id = "scrapeBtn">SCRAPE</a></li>
-        <li><a class="waves-effect waves-light btn text-light" id = "clearBtn">CLEAR ARTICLES</a></li>
-        <li> <a href="/saved" class="upper-link">SAVED ARTICLES</a></li>
-        <li><a href="https://www.npr.org/" class="upper-link">NPR.ORG</a></li>
-      </ul>
-    </div>
-  </nav>
-   <ul class="sidenav" id="mobile-demo">
-      <li><a class="waves-effect waves-light btn" id = "scrapeBtn">SCRAPE</a></li>
-        <li> <a href="/saved" class="upper-link">SAVED ARTICLES</a></li>
-        <li><a href="https://www.npr.org/" class="upper-link">NPR.ORG</a></li>
-  </ul>
-  <nav class="navbar navbar-expand-lg text-light">
-      <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler btn-light" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon" ></span>
+<nav class="nav-extended">
+  <div class="nav-wrapper">
+    <a href="/" class="news-scraper"><img src="https://media.npr.org/chrome_svg/npr-logo.svg"
+        style="height: 60px; margin-left: 10px; padding: 5px;"> SCRAPER</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"
+        style="color: black;">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a class="waves-effect waves-light btn text-light" id="scrapeBtn">SCRAPE</a></li>
+      <li><a class="waves-effect waves-light btn text-light" id="clearBtn">CLEAR ARTICLES</a></li>
+      <li> <a href="/saved" class="upper-link">SAVED ARTICLES</a></li>
+      <li><a href="https://www.npr.org/" class="upper-link">NPR.ORG</a></li>
+    </ul>
+  </div>
+</nav>
+<ul class="sidenav" id="mobile-demo">
+  <li><a class="waves-effect waves-light btn" id="scrapeBtn">SCRAPE</a></li>
+  <li> <a href="/saved" class="upper-link">SAVED ARTICLES</a></li>
+  <li><a href="https://www.npr.org/" class="upper-link">NPR.ORG</a></li>
+</ul>
+<nav class="navbar navbar-expand-lg text-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler btn-light" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-         <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link text-light" href="/"><i class="fa fa-home" aria-hidden="true"></i> HOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="https://www.npr.org/sections/news/" target = "_blank"><i class="fa fa-file-text-o" aria-hidden="true"></i> NEWS</a>
+        <a class="nav-link text-light" href="https://www.npr.org/sections/news/" target="_blank"><i
+            class="fa fa-file-text-o" aria-hidden="true"></i> NEWS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="https://www.npr.org/sections/arts/" target = "_blank"><i class="fa fa-child" aria-hidden="true"></i> ARTS &amp; LIFE</a>
+        <a class="nav-link text-light" href="https://www.npr.org/sections/arts/" target="_blank"><i class="fa fa-child"
+            aria-hidden="true"></i> ARTS &amp; LIFE</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="https://www.npr.org/music/" target = "_blank"><i class="fa fa-music" aria-hidden="true"></i> MUSIC</a>
+        <a class="nav-link text-light" href="https://www.npr.org/music/" target="_blank"><i class="fa fa-music"
+            aria-hidden="true"></i> MUSIC</a>
       </li>
-       <li class="nav-item">
-        <a class="nav-link text-light" href="https://www.npr.org/programs/" target = "_blank"><i class="fa fa-headphones" aria-hidden="true"></i> NEWS &amp; PODCASTS</a>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="https://www.npr.org/programs/" target="_blank"><i class="fa fa-headphones"
+            aria-hidden="true"></i> NEWS &amp; PODCASTS</a>
       </li>
     </ul>
   </div>
 </nav>
 
 <div class="container mt-3">
-    <div class="row">
-        <div class="card">
-            <div class="row">
-            <div class="col-lg-7">
-                <div class="card-body">
-                    <p class = "npr">BUSINESS</p>
-                    <h5 class="headline">Judge Orders Uber And Lyft To Consider All Drivers Employees</h5>
-                <p class="summary">Uber and Lyft have been fighting California over whether drivers are employees, entitled to benefits, or independent contractors. A state judge orders them to consider all those drivers employees.</p>
-                <hr>
-                <a href = "https://www.npr.org/2020/08/10/901099643/california-judge-orders-uber-and-lyft-to-consider-all-drivers-employees" target = "_blank" class="waves-effect waves-light btn-small" id = "linkbtn"><i class="material-icons left">assignment</i>Link to Full Story</a>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <img src = "https://media.npr.org/assets/img/2020/08/10/gettyimages-1227939563_wide-f917e174a856769b3576c311e136e47208166855-s900-c85.jpg" style = "width: 100%; padding: 20px;">
-            </div>
-            </div>
-</div>
-            <div class="card-group">
-  <div class="card">
-    <img class="card-img-top" src="//media.npr.org/assets/img/2020/08/10/gettyimages-1265090189_wide-6e4e589237b3a25c4963df84857a1459e5293459-s700-c85.jpg" alt="Card image cap">
-    <div class="card-body">
-        <p class = "npr">POLITICS</p>
-        <a href = "https://www.npr.org/2020/08/10/901122007/shooting-outside-white-house-interrupts-trump-briefing" target = "_blank" class = "text-dark" style = "text-decoration: none;"><h5>Shooting Outside White House Interrupts Trump Briefing</h5></a>
-    </div>
-  </div>
-  <div class="card ml-3">
-    <img class="card-img-top" src="https://media.npr.org/assets/img/2020/08/10/gettyimages-960158500_wide-bdac77046b8a94518d46c0d37b3007ce9ec87021-s700-c85.jpg" alt="Card image cap">
-    <div class="card-body">
-      <p class = "npr">AUTHOR INTERVIEWS</p>
-        <a href = "https://www.npr.org/2020/08/09/900603848/authors-omid-scobie-and-carolyn-durand-chart-harry-and-meghans-journey-in-new-bo" target = "_blank" class = "text-dark" style = "text-decoration: none;"><h5>Royal Reporters Chart Harry and Meghan's Journey in 'Finding Freedom'</h5></a>
-    </div>
-  </div>
-  <div class="card ml-3">
-    <img class="card-img-top" src="https://media.npr.org/assets/img/2020/08/10/gettyimages-1217776717_wide-ad465c98d140b581735a269eed4dc75e42cd54ae-s700-c85.jpg" alt="Card image cap">
-    <div class="card-body">
-   <p class = "npr">THE INDICATOR FROM PLANET MONEY</p>
-        <a href = "https://www.npr.org/2020/08/10/901111237/roller-coaster-economy-scream-inside-only" target = "_blank" class = "text-dark" style = "text-decoration: none;"><h5>3 Alternate Numbers to Understand the Roller Coaster Economy (Scream Inside Only)</h5></a>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="row">
-    <div class="col-lg-12">
-        <span class = "scraped">SCRAPED ARTICLES</span>
-        {{#each result}}
-            {{#unless saved}}
-                <div class="row">
-                     <div class="card w-100">
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col-lg-7">
-                              <p class = "npr">NEW ON NPR</p>
-                            <span class="headline">{{headline}}</span>
-                            <p class = "summary mt-2">{{summaryOne}}</p>
-                            <hr>
-                            <a href = {{link}} class="waves-effect waves-light btn-small" id = "linkbtn" target = "_blank"><i class="material-icons left">assignment</i>Link to Full Story</a>
-                            <form action="/update" method="PUT" id="save-article">
-                             <input type="hidden" name="id" value={{_id}}>
-                            <button class="btn btn-md" id="saveBtn" type="submit"><i class="material-icons left">add</i>SAVE ARTICLE</button>
-                            </form>
-                            </div>
-                            <div class="col-lg-5">
-                              <img src = {{image}} style = "width: 450px; padding: 15px;">
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            {{/unless}}
-        {{/each}}
-    </div>
-</div>
-</div>
- <!-- footer -->
-     <footer class = "mt-3 mb-0" style="background-color: #575958 ">
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-4 text-center text-md-left ">
-                    <div class="py-0">
-                        <h2 class="my-4 text-white"><img src = "https://media.npr.org/chrome_svg/npr-logo.svg" style = "height: 60px; margin-left: 10px; padding: 5px;";> SCRAPER</span></h2>
-                    </div>
-                </div> 
-                <div class="col-md-4 text-white text-center text-md-left ">
-                    <div class="py-2 my-4">
-                        <p class="footer-links font-weight-bold">
-                            <a class="text-white" href="#">HOME</a>
-                            |
-                            <a class="text-white" href="https://www.linkedin.com/in/yssabel-pangilinan-4a4519a9/" target = "_blank">LINKEDIN</a>
-                            |
-                            <a class="text-white" href="https://github.com/YPangilinan/news-scrape" target = "_blank">GITHUB REPO</a>
-                            |
-                            <a class="text-white" href="https://ypangilinan.github.io/" target = "_blank">PORTFOLIO</a>
-                        </p>
-                        <hr>
-                        <div>
-                          <h4 class = "text-light">Questions?</h4>
-                            <p class = "text-light"><a  class = "text-light" href="mailto:yssabelpangilinan@yahoo.com">yssabelpangilinan@yahoo.com</a></p>
-                        </div>  
-                    </div>  
-                </div>
-                <div class="col-md-4 text-white my-4 text-center text-md-left ">
-                    <h4>ABOUT NPR</h4>
-                    <hr>
-					          <p class="text-light my-2" id = "aboutNPR" >NPR is an independent, nonprofit media organization that was founded on a mission to create a more informed public. Every day, NPR connects with millions of Americans on the air, online, and in person to explore the news, ideas, and what it means to be human. Through its network of member stations, NPR makes local stories national, national stories local, and global stories personal.</p>
-                </div>
-            </div>  
+  <div class="row">
+    <div class="card">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="card-body">
+            <p class="npr">BUSINESS</p>
+            <h5 class="headline">Judge Orders Uber And Lyft To Consider All Drivers Employees</h5>
+            <p class="summary">Uber and Lyft have been fighting California over whether drivers are employees, entitled
+              to benefits, or independent contractors. A state judge orders them to consider all those drivers
+              employees.</p>
+            <hr>
+            <a href="https://www.npr.org/2020/08/10/901099643/california-judge-orders-uber-and-lyft-to-consider-all-drivers-employees"
+              target="_blank" class="waves-effect waves-light btn-small" id="linkbtn"><i
+                class="material-icons left">assignment</i>Link to Full Story</a>
+          </div>
         </div>
-     </footer>
+        <div class="col-lg-5">
+          <img
+            src="https://media.npr.org/assets/img/2020/08/10/gettyimages-1227939563_wide-f917e174a856769b3576c311e136e47208166855-s900-c85.jpg"
+            style="width: 100%; padding: 20px;">
+        </div>
+      </div>
+    </div>
+    <div class="card-group">
+      <div class="card">
+        <img class="card-img-top"
+          src="//media.npr.org/assets/img/2020/08/10/gettyimages-1265090189_wide-6e4e589237b3a25c4963df84857a1459e5293459-s700-c85.jpg"
+          alt="Card image cap">
+        <div class="card-body">
+          <p class="npr">POLITICS</p>
+          <a href="https://www.npr.org/2020/08/10/901122007/shooting-outside-white-house-interrupts-trump-briefing"
+            target="_blank" class="text-dark" style="text-decoration: none;">
+            <h5>Shooting Outside White House Interrupts Trump Briefing</h5>
+          </a>
+        </div>
+      </div>
+      <div class="card ml-3">
+        <img class="card-img-top"
+          src="https://media.npr.org/assets/img/2020/08/10/gettyimages-960158500_wide-bdac77046b8a94518d46c0d37b3007ce9ec87021-s700-c85.jpg"
+          alt="Card image cap">
+        <div class="card-body">
+          <p class="npr">AUTHOR INTERVIEWS</p>
+          <a href="https://www.npr.org/2020/08/09/900603848/authors-omid-scobie-and-carolyn-durand-chart-harry-and-meghans-journey-in-new-bo"
+            target="_blank" class="text-dark" style="text-decoration: none;">
+            <h5>Royal Reporters Chart Harry and Meghan's Journey in 'Finding Freedom'</h5>
+          </a>
+        </div>
+      </div>
+      <div class="card ml-3">
+        <img class="card-img-top"
+          src="https://media.npr.org/assets/img/2020/08/10/gettyimages-1217776717_wide-ad465c98d140b581735a269eed4dc75e42cd54ae-s700-c85.jpg"
+          alt="Card image cap">
+        <div class="card-body">
+          <p class="npr">THE INDICATOR FROM PLANET MONEY</p>
+          <a href="https://www.npr.org/2020/08/10/901111237/roller-coaster-economy-scream-inside-only" target="_blank"
+            class="text-dark" style="text-decoration: none;">
+            <h5>3 Alternate Numbers to Understand the Roller Coaster Economy (Scream Inside Only)</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-       
+  <div class="row">
+    <div class="col-lg-12">
+      <span class="scraped">SCRAPED ARTICLES</span>
+      {{#each result}}
+      {{#unless saved}}
+      <div class="row">
+        <div class="card w-100">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-7">
+                <p class="npr">NEW ON NPR</p>
+                <span class="headline">{{headline}}</span>
+                <p class="summary mt-2">{{summaryOne}}</p>
+                <hr>
+                <a href={{link}} class="waves-effect waves-light btn-small" id="linkbtn" target="_blank"><i
+                    class="material-icons left">assignment</i>Link to Full Story</a>
+                <form action="/update" method="PUT" id="save-article">
+                  <input type="hidden" name="id" value={{_id}}>
+                  <button class="btn btn-md" id="saveBtn" type="submit"><i class="material-icons left">add</i>SAVE
+                    ARTICLE</button>
+                </form>
+              </div>
+              <div class="col-lg-5">
+                <img src={{image}} style="width: 450px; padding: 15px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<footer class="mt-3 mb-0" style="background-color: #575958 ">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-4 text-center text-md-left ">
+        <div class="py-0">
+          <h2 class="my-4 text-white"><img src="https://media.npr.org/chrome_svg/npr-logo.svg"
+              style="height: 60px; margin-left: 10px; padding: 5px;" ;> SCRAPER</span></h2>
+        </div>
+      </div>
+      <div class="col-md-4 text-white text-center text-md-left ">
+        <div class="py-2 my-4">
+          <p class="footer-links font-weight-bold">
+            <a class="text-white" href="#">HOME</a>
+            |
+            <a class="text-white" href="https://www.linkedin.com/in/yssabel-pangilinan-4a4519a9/"
+              target="_blank">LINKEDIN</a>
+            |
+            <a class="text-white" href="https://github.com/YPangilinan/news-scrape" target="_blank">GITHUB REPO</a>
+            |
+            <a class="text-white" href="https://ypangilinan.github.io/" target="_blank">PORTFOLIO</a>
+          </p>
+          <hr>
+          <div>
+            <h4 class="text-light">Questions?</h4>
+            <p class="text-light"><a class="text-light"
+                href="mailto:yssabelpangilinan@yahoo.com">yssabelpangilinan@yahoo.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 text-white my-4 text-center text-md-left ">
+        <h4>ABOUT NPR</h4>
+        <hr>
+        <p class="text-light my-2" id="aboutNPR">NPR is an independent, nonprofit media organization that was founded on
+          a mission to create a more informed public. Every day, NPR connects with millions of Americans on the air,
+          online, and in person to explore the news, ideas, and what it means to be human. Through its network of member
+          stations, NPR makes local stories national, national stories local, and global stories personal.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
 <script>
+  $(document).ready(function () {
+
     $(document).ready(function () {
-
-        $(document).ready(function(){
-        $('.sidenav').sidenav();
-        });
-
-
-        $("#scrapeBtn").on("click", function (event) {
-            event.preventDefault();
-            $.get("/scrape", function (data) {
-                location.reload();
-            });
-        });
-        $("#clearBtn").on("click", function(event){
-            event.preventDefault();
-            clearData();
-            location.reload();
-        })
-        $("#save-article").on("click", function (event) {
-            event.preventDefault();
-            console.log("save it!");
-            var id = $(this).children().val();
-            console.log(id);
-            var data = {
-                _id: id
-            }
-            $.ajax("/update/" + id, {
-                type: "PUT",
-                data: data
-            })
-            location.reload();
-        });
-
-        function clearData(){
-        return $.ajax({
-            url: "/articles",
-            type: "DELETE"
-        });
-        }
+      $('.sidenav').sidenav();
     });
+
+
+    $("#scrapeBtn").on("click", function (event) {
+      event.preventDefault();
+      $.get("/scrape", function (data) {
+        location.reload();
+      });
+    });
+    $("#clearBtn").on("click", function (event) {
+      event.preventDefault();
+      clearData();
+      location.reload();
+    })
+    $("#save-article").on("click", function (event) {
+      event.preventDefault();
+      console.log("save it!");
+      var id = $(this).children().val();
+      console.log(id);
+      var data = {
+        _id: id
+      }
+      $.ajax("/update/" + id, {
+        type: "PUT",
+        data: data
+      })
+      location.reload();
+    });
+
+    function clearData() {
+      return $.ajax({
+        url: "/articles",
+        type: "DELETE"
+      });
+    }
+  });
 </script>
