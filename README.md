@@ -18,7 +18,7 @@ At the top navigation bar, there is a button to "scrape", that will load any of 
 <br><br>
 
 **Save Article Button**<br>
-After completing the scrape, the user has the option to save the artciles to a different tab so they can reference it later. <br><br>
+After completing the scrape, the user has the option to save the articles to a different tab so they can reference it later. <br><br>
 ![save (1)](https://user-images.githubusercontent.com/61812035/90060594-d206f600-dc99-11ea-8dc9-500e169b341b.gif)
 <br><br>
 
